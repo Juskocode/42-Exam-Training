@@ -15,6 +15,8 @@ int	*ft_range(int start, int end)
 		si = -si;
 	len = ft_abs(start - end) + 1;
 	int *range = malloc(sizeof(int) * len);
+	if (!range)
+		return 0;
 	int i = 0;
 	while (i < len)
 	{
