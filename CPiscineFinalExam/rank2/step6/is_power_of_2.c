@@ -7,7 +7,7 @@ int	is_power_of_2(unsigned int n)
 	//why?
 	//simple
 	//think, 0001 = 1 (2^0), 0010 = 2 (2^1) and so on...
-	//1111 will funny story it will ne 2^4 - 1 (16)
+	//1111 well funny story it will ne 2^4 - 1 (16)
 	//lol the sum of all powers of 2 until n is 2^(n+1) - 1
 	//so yeah pretty much it bros xD
 	//if not return 0 lmao
@@ -34,7 +34,7 @@ int	main(void)
 		if (is_power_of_2(v))
 			printf("%d is a power of 2!", v);
 		else
-			printf("%d lame not a power if 2 :(", v);
+			printf("%d lame not a power of 2 :(", v);
 	}
 	return 0;
 }
