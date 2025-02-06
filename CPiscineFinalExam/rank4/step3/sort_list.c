@@ -37,9 +37,68 @@ void	ft_print_list(t_list *list)
 	while (curr)
 	{
 		if (curr->next)
-			printf("%d ->", curr->data);
+			printf("%d -> ", *(int *)curr->data);
 		else
-			printf("%d", curr->data);
-		curr = curr->data;
+			printf("%d\n", *(int *)curr->data);
+		curr = curr->next;
 	}
 }
+
+int	ft_cmp_int(int a, int b)
+{
+	return a - b;
+}
+
+t_list	*sort_list(t_list *l, int (*cmp)(int, int))
+{
+	(void)(*cmp)(0, 0);
+	t_list *curr = l;
+	t_list *next = curr->next;
+	while (curr)
+	{
+		next = curr->next;
+		while (next)
+		{
+			if ((*cmp)(*(int *)curr->data, *(int *)next->data) > 0)
+			{
+				void* t = curr->data;
+				curr->data = next->data;
+				next->data = t;
+			}
+			next = next->next;
+		}
+		curr = curr->next;
+	}
+	return l;
+}
+
+int	main(void)
+{
+	int d1 = 0, d2 = 2, d3 = -10;
+	
+	t_list *list = NULL;
+
+	push_front(&list, &d1);
+	push_front(&list, &d2);
+	push_front(&list, &d3);
+
+	ft_print_list(list);
+	sort_list(list, ft_cmp_int);
+	ft_print_list(list);
+	return 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
