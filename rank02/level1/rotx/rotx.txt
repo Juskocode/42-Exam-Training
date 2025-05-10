@@ -1,0 +1,12 @@
+Assignment name  : rotx
+Expected files   : rotx.c
+Allowed functions: write
+--------------------------------------------------------------------------------
+
+Write a program that takes a string and displays it, replacing each of its
+letters by the letter x spaces ahead in alphabetical order.
+
+The output will be followed by a newline.
+
+If the number of arguments is not 1, the program displays a newline.
+
